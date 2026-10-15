@@ -20,11 +20,12 @@ p{color:#686257;max-width:30ch;margin:0}
 <body>
 <img src="icono-512.png" alt="Oficina de Práctica Integral">
 <a id="ir" href="https://claude.ai/artifact/HEGb83u1cpc3UWBkKowim8">Entrar en la Oficina</a>
-<p>Se abre con tu cuenta de Claude.</p>
+<p id="txt">Se abre con tu cuenta de Claude.</p>
+<small style="color:#8d877c">Oficina · versión 1.01</small>
 <script>
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
 var standalone=window.matchMedia("(display-mode: standalone)").matches||navigator.standalone;
-if(standalone)location.replace("https://claude.ai/artifact/HEGb83u1cpc3UWBkKowim8");
+if(standalone){document.getElementById("txt").textContent="Abriendo la Oficina…";setTimeout(function(){location.replace("https://claude.ai/artifact/HEGb83u1cpc3UWBkKowim8")},1500)}
 </script>
 </body>
 </html>
